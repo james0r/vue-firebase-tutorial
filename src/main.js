@@ -6,6 +6,18 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBxy2gxZZ8YbNxwQJo-tkz48y5UXSY2k1o",
+    authDomain: "vue-firebase-tutorial-123.firebaseapp.com",
+    databaseURL: "https://vue-firebase-tutorial-123.firebaseio.com",
+    projectId: "vue-firebase-tutorial-123",
+    storageBucket: "",
+    messagingSenderId: "552763223239"
+  };
+  firebase.initializeApp(config);
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
