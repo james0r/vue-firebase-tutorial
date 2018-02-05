@@ -80,15 +80,26 @@
         </a>
       </li>
     </ul>
+    <button v-on:click="logout">Logout</button>
   </div>
 </template>
 
 <script>
+import firebase from 'firebase';
+
 export default {
   name: 'Hello',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods: {
+    logout: function() {
+    console.log("logout() was called");
+      firebase.auth().signOut().then(() => {
+        this.$router.replace('login')
+      })
     }
   }
 }
@@ -109,5 +120,16 @@ li {
 }
 a {
   color: #42b983;
+}
+
+button {
+  padding: 10px 20px;
+  background: #42b983;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 22px;
+  outline: 0;
+  cursor: pointer;
 }
 </style>
